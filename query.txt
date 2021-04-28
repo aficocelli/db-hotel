@@ -1,0 +1,45 @@
+1) Seleziona tutti gli ospiti che sono stati identificati con la carta di identità
+
+	RISP: SELECT * FROM `ospiti` where `document_type` = 'ci';
+
+
+2) Seleziona tutti gli ospiti che sono nati dopo il 1988
+
+
+	RISP: SELECT * FROM `ospiti` WHERE`date_of_birth` >= '1989-01-01';
+
+
+3) Seleziona tutti gli ospiti che hanno più di 20 anni (al momento dell’esecuzione della query)
+
+
+	RISP: SELECT * FROM `ospiti` WHERE TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE( )) = 20;
+
+
+4) Seleziona tutti gli ospiti il cui nome inizia con la D
+
+
+	RISP: SELECT * FROM `ospiti` WHERE`name` LIKE 'd%';
+
+
+5) Calcola il totale degli ordini accepted
+
+
+	RISP: SELECT COUNT(id) FROM `pagamenti` WHERE status = 'accepted';
+
+	RISP. ALTERNATIVA:  SELECT COUNT(id) AS 'pagamenti accettati' FROM `pagamenti` WHERE status = 'accepted';
+
+
+6) Qual è il prezzo massimo pagato?
+
+
+	RISP: SELECT MAX(price) FROM `pagamenti`;
+
+
+7) Seleziona gli ospiti riconosciuti con patente e nati nel 1975
+
+	RISP: SELECT * FROM `ospiti` WHERE `document_type` LIKE 'driver%' AND `date_of_birth` LIKE '1975-%-%';
+
+
+8) Quanti posti letto ha l’hotel in totale?
+
+	RISP: SELECT SUM(beds) AS 'totale_posti_letto' FROM `stanze`;
