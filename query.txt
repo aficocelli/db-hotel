@@ -12,7 +12,7 @@
 3) Seleziona tutti gli ospiti che hanno più di 20 anni (al momento dell’esecuzione della query)
 
 
-	RISP: SELECT * FROM `ospiti` WHERE TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE( )) = 20;
+	RISP: SELECT * FROM `ospiti` WHERE TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE( )) > 20;
 
 
 4) Seleziona tutti gli ospiti il cui nome inizia con la D
